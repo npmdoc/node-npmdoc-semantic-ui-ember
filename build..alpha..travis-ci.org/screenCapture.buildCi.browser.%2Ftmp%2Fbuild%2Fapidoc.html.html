@@ -1,0 +1,139 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://www.semantic-ui.com">semantic-ui-ember (v2.0.1)</a>
+</h1>
+<h4>The Official Semantic UI Addon for Ember applications</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.semantic-ui-ember">module semantic-ui-ember</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.semantic-ui-ember.included">
+            function <span class="apidocSignatureSpan">semantic-ui-ember.</span>included
+            <span class="apidocSignatureSpan">(app)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">semantic-ui-ember.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.semantic-ui-ember" id="apidoc.module.semantic-ui-ember">module semantic-ui-ember</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.semantic-ui-ember.included" id="apidoc.element.semantic-ui-ember.included">
+        function <span class="apidocSignatureSpan">semantic-ui-ember.</span>included
+        <span class="apidocSignatureSpan">(app)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">included = function (app) {
+  var options = (app &amp;&amp; app.project.config(app.env)['SemanticUI']) || {};
+
+  var importCss = getDefault('import', 'css', [options, defaults]);
+  if (importCss) {
+    var sourceCss = getDefault('source', 'css', [options, defaults]);
+    app.import({
+      development: path.join(sourceCss, 'semantic.css'),
+      production: path.join(sourceCss, 'semantic.min.css')
+    });
+  }
+
+  var importJavascript = getDefault('import', 'javascript', [options, defaults]);
+  if (importJavascript) {
+    var sourceJavascript = getDefault('source', 'javascript', [options, defaults]);
+    app.import({
+      development: path.join(sourceJavascript, 'semantic.js'),
+      production: path.join(sourceJavascript, 'semantic.min.js')
+    });
+  }
+
+  var importImages = getDefault('import', 'images', [options, defaults]);
+  if (importImages) {
+    var sourceImage = getDefault('source', 'images', [options, defaults]);
+    var imageOptions = { destDir: getDefault('destination', 'images', [options, defaults]) };
+    app.import(path.join(sourceImage, 'flags.png'), imageOptions);
+  }
+
+  var importFonts = getDefault('import', 'fonts', [options, defaults]);
+  if (importFonts) {
+    var fontExtensions = ['.eot','.otf','.svg','.ttf','.woff','.woff2'];
+    var sourceFont = getDefault('source', 'fonts', [options, defaults]);
+    var fontOptions = { destDir: getDefault('destination', 'fonts', [options, defaults]) };
+    for (var i = fontExtensions.length - 1; i &gt;= 0; i--) {
+      app.import(path.join(sourceFont, 'icons' + fontExtensions[i]), fontOptions);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
